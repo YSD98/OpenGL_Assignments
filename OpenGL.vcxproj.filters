@@ -15,16 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="4_Teapot\TeaPot.cpp">
+    <ClCompile Include="2_Triangles\Triangles.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="4_Teapot\TeaPot.vert">
+    <ClInclude Include="2_Triangles\ShaderUtils.h">
       <Filter>Resource Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="2_Triangles\2.frag">
+      <Filter>Header Files</Filter>
     </None>
-    <None Include="4_Teapot\TeaPot.frag">
-      <Filter>Resource Files</Filter>
+    <None Include="2_Triangles\2.vert">
+      <Filter>Header Files</Filter>
     </None>
   </ItemGroup>
 </Project>

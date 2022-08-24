@@ -19,11 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="4_Teapot\TeaPot.cpp" />
+    <ClCompile Include="2_Triangles\Triangles.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="4_Teapot\TeaPot.frag" />
-    <None Include="4_Teapot\TeaPot.vert" />
+    <ClInclude Include="2_Triangles\ShaderUtils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="2_Triangles\2.frag" />
+    <None Include="2_Triangles\2.vert" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

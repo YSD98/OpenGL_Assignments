@@ -1,1 +1,2 @@
 D:\DATA\Back Class\OpenGL\OpenGL\Debug\OpenGL.exe
+D:\DATA\Github Projects\YSD98\OpenGL_Assignments\Debug\OpenGL.exe
