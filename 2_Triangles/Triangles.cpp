@@ -15,7 +15,7 @@ int main()
 	glewExperimental = true;											// Needed for core profile
 	if (!glfwInit())													// Initialise GLFW
 	{
-		cout << "Failed to initialize GLFW\n";
+		cout << "Failed to initialize GLFW \n";
 		return -1;
 	}
 	
