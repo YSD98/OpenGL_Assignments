@@ -1,4 +1,5 @@
-﻿  Triangles.cpp
-D:\DATA\Github Projects\YSD98\OpenGL_Assignments\2_Triangles\Triangles.cpp(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+﻿  TeaPot_Faces.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
+D:\DATA\Github Projects\YSD98\OpenGL_Assignments\External Libraries\GLFW\include\GLFW\glfw3.h(123): message : see previous definition of 'APIENTRY'
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   OpenGL.vcxproj -> D:\DATA\Github Projects\YSD98\OpenGL_Assignments\Debug\OpenGL.exe

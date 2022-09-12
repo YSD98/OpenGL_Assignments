@@ -15,21 +15,36 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2_Triangles\Triangles.cpp">
+    <ClCompile Include="4_Teapot\TeaPot_Faces.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="2_Triangles\ShaderUtils.h">
-      <Filter>Resource Files</Filter>
+    <ClInclude Include="4_Teapot\ShaderUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="4_Teapot\cyCore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="4_Teapot\cyGL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="4_Teapot\cyMatrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="4_Teapot\cyTriMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="4_Teapot\cyVector.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="2_Triangles\2.frag">
-      <Filter>Header Files</Filter>
+    <None Include="4_Teapot\TeaPot.frag">
+      <Filter>Resource Files</Filter>
     </None>
-    <None Include="2_Triangles\2.vert">
-      <Filter>Header Files</Filter>
+    <None Include="4_Teapot\TeaPot.vert">
+      <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
 </Project>
