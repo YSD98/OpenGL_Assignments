@@ -15,7 +15,7 @@ void main()
 {
 	//color = vec3(1.0,1.0,0.0);
 
-	vec4 materialDiffuseColor = vec4(1.0f, 0.0f, 0.0f, 1.0f);
+	vec4 materialDiffuseColor = vec4(0.0f, 1.0f, 0.0f, 1.0f);
     vec4 materialAmbientColor = vec4(0.5f, 0.5f, 0.5f, 1.0f) * materialDiffuseColor;
     vec4 materialSpecularColor = vec4(0.3f, 0.3f, 0.3f, 1.0f);
     

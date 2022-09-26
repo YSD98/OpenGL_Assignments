@@ -54,7 +54,7 @@ void Draw()
     glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementBuffer);
-    glDrawElements(GL_TRIANGLES, teaPot.NF() * 3, GL_UNSIGNED_INT, 0);      //no. of faces * no. of components(x,y,z)
+    glDrawElements(GL_TRIANGLES, teaPot.NF() * 3, GL_UNSIGNED_INT, 0);
 
     glfwSwapBuffers(window);
     glfwPollEvents();
