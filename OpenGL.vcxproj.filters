@@ -15,36 +15,36 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="4_Teapot\TeaPot_Faces.cpp">
+    <ClInclude Include="4_Teapot Mesh\cyCore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="4_Teapot Mesh\cyGL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="4_Teapot Mesh\cyMatrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="4_Teapot Mesh\cyTriMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="4_Teapot Mesh\cyVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="4_Teapot Mesh\ShaderUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="4_Teapot Mesh\TeaPot.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="4_Teapot Mesh\TeaPot.vert">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="4_Teapot Mesh\TeaPot_Faces.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="4_Teapot\ShaderUtils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="4_Teapot\cyCore.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="4_Teapot\cyGL.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="4_Teapot\cyMatrix.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="4_Teapot\cyTriMesh.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="4_Teapot\cyVector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="4_Teapot\TeaPot.frag">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="4_Teapot\TeaPot.vert">
-      <Filter>Resource Files</Filter>
-    </None>
   </ItemGroup>
 </Project>

@@ -19,19 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="4_Teapot\TeaPot_Faces.cpp" />
+    <ClInclude Include="4_Teapot Mesh\cyCore.h" />
+    <ClInclude Include="4_Teapot Mesh\cyGL.h" />
+    <ClInclude Include="4_Teapot Mesh\cyMatrix.h" />
+    <ClInclude Include="4_Teapot Mesh\cyTriMesh.h" />
+    <ClInclude Include="4_Teapot Mesh\cyVector.h" />
+    <ClInclude Include="4_Teapot Mesh\ShaderUtils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="4_Teapot\cyCore.h" />
-    <ClInclude Include="4_Teapot\cyGL.h" />
-    <ClInclude Include="4_Teapot\cyMatrix.h" />
-    <ClInclude Include="4_Teapot\cyTriMesh.h" />
-    <ClInclude Include="4_Teapot\cyVector.h" />
-    <ClInclude Include="4_Teapot\ShaderUtils.h" />
+    <None Include="4_Teapot Mesh\TeaPot.frag" />
+    <None Include="4_Teapot Mesh\TeaPot.vert" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="4_Teapot\TeaPot.frag" />
-    <None Include="4_Teapot\TeaPot.vert" />
+    <ClCompile Include="4_Teapot Mesh\TeaPot_Faces.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
