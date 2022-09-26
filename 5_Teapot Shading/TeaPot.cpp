@@ -4,7 +4,6 @@
 #include<glm.hpp>
 #include<gtx/transform.hpp>
 #include<gtc/matrix_transform.hpp>
-#include <vec4.hpp>
 
 #include "Headers/cyGL.h"
 #include "Headers/cyMatrix.h"
@@ -12,41 +11,35 @@
 #include "Headers/cyTriMesh.h"
 #include "Headers/ShaderUtils.h"
 
-//using namespace std;
-//using namespace glm;
-
 GLFWwindow* window;
+
 GLuint programId;
-GLuint vertexBuffer;
-GLuint colorbuffer;
-GLuint uniformMVP;
-GLuint uniformModel;
-GLuint uniformView;
 GLuint lightID;
 
+GLuint vertexBuffer;
+GLuint colorbuffer;
 GLuint elementBuffer;
 GLuint normalsBuffer;
 
-GLuint VertexArrayID;       //-
+GLuint uniformMVP;
+GLuint uniformModel;
+GLuint uniformView;
 
-
+cy::Matrix4f Views;
 cy::Matrix4f mat4mvp;
 cy::Matrix4f mat4Model;
 cy::Matrix4f mat4View;
-
-cy::Matrix4f Views;
 
 cy::TriMesh teaPot;
 
 void Draw()
 {
-
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    glEnable(GL_DEPTH_TEST);        //+
+    glEnable(GL_DEPTH_TEST);
 
     glUseProgram(programId);
-    glPointSize(2.8f);              //+
+    glPointSize(2.8f);
 
     glEnableVertexAttribArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
@@ -63,10 +56,6 @@ void Draw()
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementBuffer);
     glDrawElements(GL_TRIANGLES, teaPot.NF() * 3, GL_UNSIGNED_INT, 0);      //no. of faces * no. of components(x,y,z)
 
-    
-    //glDrawArrays(GL_POINTS, 0, teaPot.NV());
-
-    //glDisableVertexAttribArray(0);
     glfwSwapBuffers(window);
     glfwPollEvents();
 }
@@ -81,7 +70,7 @@ void SetMVPMatrix()
         cy::Vec3 <float>(0.0f, 1.0f, 0.0f)
     );
 
-    cy::Matrix4f Model = cy::Matrix4f(2.5f);    //*
+    cy::Matrix4f Model = cy::Matrix4f(2.5f);
 
     mat4mvp = Projection * Views * Model;
     uniformMVP = glGetUniformLocation(programId, "mvp");
@@ -104,7 +93,6 @@ void LoadModel()
 
 int main()
 {
-
     if (!glfwInit())
     {
         fprintf(stderr, "Failed to initiaize GLFW\n");
@@ -124,28 +112,7 @@ int main()
         return -1;
     }
     glfwMakeContextCurrent(window);
-    //---------------------------------------------------------
 
-    
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);  //+
-    glEnable(GL_BLEND);                                 //+
-
-    static const GLfloat g_vertex_buffer_data[] = {
-        -1.0f,-1.0f,0.0f,
-        1.0f,-1.0f,0.0f,
-        0.0f,1.0f,0.0f
-
-    };
-    static const GLfloat g_color_buffer_data[] = {
-
-       1.0f,0.0f,0.0f,
-       0.0f,1.0f,0.0f,
-       0.0f,0.0f,0.0f
-
-    };
-
-
-    //******************************************************
     glewExperimental = true;
     if (glewInit() != GLEW_OK)
     {
@@ -153,20 +120,26 @@ int main()
         return -1;
     }
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
-    //******************************************************
+    //--------------------------------------------------
+
+    static const GLfloat g_vertex_buffer_data[] = {
+        -1.0f,-1.0f,0.0f,
+        1.0f,-1.0f,0.0f,
+        0.0f,1.0f,0.0f
+    };
+    static const GLfloat g_color_buffer_data[] = {
+       1.0f,0.0f,0.0f,
+       0.0f,1.0f,0.0f,
+       0.0f,0.0f,0.0f
+    };
 
     programId = LoadShader("5_Teapot Shading\\Shaders\\TeaPot.vert", "5_Teapot Shading\\Shaders\\TeaPot.frag");
     LoadModel();
 
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);   //N
-
     //VAO creation
-    GLuint VAO;                                //N
-    glGenVertexArrays(1, &VAO);                 //N
-    glBindVertexArray(VAO);                     //N
-
-    //glGenVertexArrays(1, &VertexArrayID);     
-    //glBindVertexArray(VertexArrayID);
+    GLuint VAO;
+    glGenVertexArrays(1, &VAO);
+    glBindVertexArray(VAO);
     
     //GenBuffer, Bind and Set Buffer data of model
     glGenBuffers(1, &vertexBuffer);
@@ -185,13 +158,8 @@ int main()
     glBindBuffer(GL_ARRAY_BUFFER, normalsBuffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(cy::Vec3f) * teaPot.NVN(), &teaPot.VN(0), GL_STATIC_DRAW);
 
-
-    
-    glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
-    //uniformMVP = glGetUniformLocation(programId, "mvp");  //-
     do
     {
-        
         mat4View = Views;
         mat4Model = cy::Matrix4f(1.0f);
 
