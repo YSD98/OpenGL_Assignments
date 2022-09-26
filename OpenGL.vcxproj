@@ -19,19 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="4_Teapot Mesh\cyCore.h" />
-    <ClInclude Include="4_Teapot Mesh\cyGL.h" />
-    <ClInclude Include="4_Teapot Mesh\cyMatrix.h" />
-    <ClInclude Include="4_Teapot Mesh\cyTriMesh.h" />
-    <ClInclude Include="4_Teapot Mesh\cyVector.h" />
-    <ClInclude Include="4_Teapot Mesh\ShaderUtils.h" />
+    <ClCompile Include="5_Teapot Shading\TeaPot.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="4_Teapot Mesh\TeaPot.frag" />
-    <None Include="4_Teapot Mesh\TeaPot.vert" />
+    <ClInclude Include="5_Teapot Shading\Headers\cyCore.h" />
+    <ClInclude Include="5_Teapot Shading\Headers\cyGL.h" />
+    <ClInclude Include="5_Teapot Shading\Headers\cyMatrix.h" />
+    <ClInclude Include="5_Teapot Shading\Headers\cyTriMesh.h" />
+    <ClInclude Include="5_Teapot Shading\Headers\cyVector.h" />
+    <ClInclude Include="5_Teapot Shading\Headers\ShaderUtils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="4_Teapot Mesh\TeaPot_Faces.cpp" />
+    <None Include="5_Teapot Shading\Shaders\TeaPot.frag" />
+    <None Include="5_Teapot Shading\Shaders\TeaPot.vert" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

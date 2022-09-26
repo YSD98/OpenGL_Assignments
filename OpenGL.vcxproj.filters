@@ -15,36 +15,36 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="4_Teapot Mesh\cyCore.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="4_Teapot Mesh\cyGL.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="4_Teapot Mesh\cyMatrix.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="4_Teapot Mesh\cyTriMesh.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="4_Teapot Mesh\cyVector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="4_Teapot Mesh\ShaderUtils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="4_Teapot Mesh\TeaPot.frag">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="4_Teapot Mesh\TeaPot.vert">
-      <Filter>Resource Files</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="4_Teapot Mesh\TeaPot_Faces.cpp">
+    <ClCompile Include="5_Teapot Shading\TeaPot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="5_Teapot Shading\Headers\cyCore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="5_Teapot Shading\Headers\cyGL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="5_Teapot Shading\Headers\cyMatrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="5_Teapot Shading\Headers\cyTriMesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="5_Teapot Shading\Headers\cyVector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="5_Teapot Shading\Headers\ShaderUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="5_Teapot Shading\Shaders\TeaPot.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="5_Teapot Shading\Shaders\TeaPot.vert">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
