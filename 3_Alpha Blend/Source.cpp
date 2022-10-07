@@ -3,13 +3,14 @@
 #include<GL/glew.h>
 #include<GLFW/glfw3.h>
 
-#include "ShaderUtils.h";
+#include "ShaderUtils.h"
 
 using namespace std;
 
 GLFWwindow* window;
 GLuint VertexArrayID;
 GLuint vertexBuffer;
+GLuint elementBuffer;
 GLuint colorbuffer;
 
 int main()
@@ -44,17 +45,27 @@ int main()
 	}
 
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
-
-	static const GLfloat g_vertex_buffer_data[] = {
-		-1, -1, 0,
-		 1, -1, 0,
-		 0, 1, 0
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_BLEND);
+	static const GLfloat g_vertex_buffer_data[] = {			//Vertices array
+		-0.5, -0.5, 0,
+		 0.5, -0.5, 0,
+		 0.5, 0.5, 0,
+		-0.5, 0.5, 0,
+		 0.0, 1.0, 0
+	};
+	static const unsigned int elem[] = {			//Indices Array
+		0,1,2,
+		0,2,3,
+		2,3,4
 	};
 
 	static const GLfloat g_color_buffer_data[] = {
-		0.0f, 0.0f, 0.0f,
-		0.0f, 1.0f, 0.0f,
-		0.0f, 0.0f, 1.0f
+		1.0f, 0.4f, 0.5f,
+		0.49f, 0.73f, 0.91f,
+		1.0f, 1.0f, 0.5f,
+		1.0f, 1.0f, 0.5f,
+		1.0f, 1.0f,1.0f
 	};
 
 	glGenVertexArrays(1, &VertexArrayID);
@@ -67,6 +78,10 @@ int main()
 	glGenBuffers(1, &colorbuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, colorbuffer);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(g_color_buffer_data), g_color_buffer_data, GL_STATIC_DRAW);
+
+	glGenBuffers(1, &elementBuffer);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementBuffer);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int) * 9, elem, GL_STATIC_DRAW);
 
 	GLuint programId = LoadShader("3_Alpha Blend\\Alpha.vert", "3_Alpha Blend\\Alpha.frag");
 	//GLint intensityUniformLocation = glGetUniformLocation(programId, "intensity");
@@ -90,9 +105,12 @@ int main()
 		glBindBuffer(GL_ARRAY_BUFFER, colorbuffer);
 		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (void*)0);
 
+
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementBuffer);
+		glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0);
 		//glUniform1f(intensityUniformLocation, 0.1f);
 
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		//glDrawArrays(GL_TRIANGLES, 0, 4);
 		glDisableVertexAttribArray(0);
 
 		glfwSwapBuffers(window);
